@@ -1,1 +1,17 @@
 {% extends 'base.html' %}
+{% block title %} HR Agency | Home  {% endblock title %}
+
+{% block navbar-content %}
+    <span class="text-warning"> 
+        <i class="fas fa-chart-pie"></i>  Hr Hybrid
+    </span>
+{% endblock navbar-content %}
+
+{% block content%}
+<div class="block-position">
+    <h1 class="text-light">We <span class="text-warning" id="element"></span></h1>
+    <a href="{% url 'opportunity' %}" class="btn btn-outline-warning border-light mt-4 mt-sm-5" id="btn-job">
+        <i class="fas fa-chart-pie"></i> Job Opportunity
+    </a>
+</div>
+{% endblock content%}

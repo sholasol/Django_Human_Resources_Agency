@@ -1,0 +1,75 @@
+<!-- Modal (Root) -->
+<div class="modal fade" {% block modal-id %} {% endblock modal-id %} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="defaultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="defaultModalLabel"><i class="fas fa-code"></i> {% block modal-title %} {% endblock modal-title %}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" {% block validation %} {% endblock validation %} enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="input-group input-group-sm mb-2">
+            <button class="side-label btn border-secondary bg-light">
+              <i class="fas fa-user-alt"></i>
+            </button>
+            <input type="text" class="form-control name" {% block id-name %}{% endblock id-name %}  name="name" placeholder="Full Name">
+          </div>
+
+          <div class="input-group input-group-sm mb-2">
+            <button class="side-label btn border-secondary bg-light">
+              <i class="fas fa-universal-access"></i>
+            </button>
+            <input type="text" class="form-control age" {% block id-age %}{% endblock id-age %}  name="age" placeholder="Your Age">
+          </div>
+
+          <div class="input-group input-group-sm mb-2">
+            <button class="side-label btn border-secondary bg-light">
+              <i class="fas fa-envelope"></i>
+            </button>
+            <input type="text" class="form-control email" {% block id-email %}{% endblock id-email %}  name="email" placeholder="Your Email">
+          </div>
+
+          <div class="input-group input-group-sm mb-2">
+            <button class="side-label btn border-secondary bg-light">
+              <i class="fas fa-phone"></i>
+            </button>
+            <input type="text" class="form-control phone" {% block id-phone %}{% endblock id-phone %} name="phone" placeholder="Phone">
+          </div>
+
+          <div class="input-group input-group-sm mb-2">
+            <button class="side-label btn border-secondary bg-light">
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+            <input type="text" class="form-control" {% block id-address %}{% endblock id-address %}  name="address" placeholder="Address">
+          </div>
+
+          <div class="mb-2 mt-3">
+            <textarea class="form-control" {% block id-experience %}{% endblock id-experience %}  name="experience" rows="3" placeholder="Talk about your Experience"></textarea>
+          </div>
+
+          <div class="mb-2 mt-3">
+            <textarea class="form-control skills" {% block id-skills %}{% endblock id-skills %}  name="skills" rows="3" placeholder="Talk about your Skills"></textarea>
+          </div>
+          <hr class="" style="height: 2px;">
+
+          <div class="mb-3">
+            <div class="mb-3" style="font-size: 14px;">
+              <i class="fas fa-upload"></i> Upload your resume
+            </div>
+            <input type="file" name="file" {% block id-file %}{% endblock id-file %}  class="form-control form-control-sm"
+             accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            <div class="form-text" style="font-size: 12px;">*Allowed extensions: pdf - doc -docx</div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark btn-sm btn-cancel" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-secondary btn-sm btn-send">Send</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

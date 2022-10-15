@@ -6,3 +6,6 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, "home.html")
+
+def opportunity(request):
+    return render(request, "opportunity.html") 

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path to home page
     path('', views.home, name="home"),
+    path('opportunity/', views.opportunity, name="opportunity"),
 ]
